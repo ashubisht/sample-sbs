@@ -12,7 +12,7 @@
 
     type Query {
         getData : String
-
+        getUsers: [User]
     }
 
     enum Gender {
@@ -39,3 +39,6 @@
         age: Int!
     }
 
+    type Mutation {
+        createUser(input: UserInput) : User
+    }

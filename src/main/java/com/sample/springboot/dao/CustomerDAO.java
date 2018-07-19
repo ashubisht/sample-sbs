@@ -1,6 +1,7 @@
 package com.sample.springboot.dao;
 
 import com.sample.springboot.schema.Customer;
+import com.sample.springboot.schema.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.jdbc.core.support.JdbcDaoSupport;
@@ -39,5 +40,9 @@ public class CustomerDAO /*extends JdbcDaoSupport*/{
         });*/
         namedParameterJdbcTemplate.update(sql,map);
         System.out.println("DB Insertiom success");
+    }
+
+    public User createUser(User userInput) {
+        return new User(2, "first", "last", "email", userInput.getGender(), 25);
     }
 }

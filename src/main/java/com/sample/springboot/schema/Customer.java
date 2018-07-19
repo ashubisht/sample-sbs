@@ -1,12 +1,13 @@
 package com.sample.springboot.schema;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
 
 import java.io.Serializable;
 
 @Data
-public class Customer implements Serializable {
-    private static final long serialVersionUID = 1L;
+@AllArgsConstructor
+public class Customer {
     long custId;
     String name;
     int age;
